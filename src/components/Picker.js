@@ -52,7 +52,7 @@ function ColorInput() {
 
 	return (
 		<React.Fragment>
-			<section className="grid grid-cols-1 lg:grid-cols-3">
+			<section className="grid grid-cols-1 lg:grid-cols-3 my-8">
 
 				<Option
 					icon={<MdColorLens />}
