@@ -14,7 +14,7 @@ function Main() {
 			<div className="col-span-12"><Picker /></div>
 
 
-			<div className="col-span-12 grid grid-cols-9">
+			<div className="col-span-12 grid grid-cols-3 md:grid-cols-9">
 
 				<TintShade />
 

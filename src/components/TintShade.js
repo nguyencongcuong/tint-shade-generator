@@ -30,8 +30,8 @@ function TintShade() {
 	return (
 		<React.Fragment>
 			{shadeTint()}
-			<section className="w-screen text-center bg-white p-4">
-				<h2 className="font-bold uppercase p-4">Generated Hex List From Tints to Shades</h2>
+			<section className="w-screen text-center bg-white p-8">
+				<h2 className="font-bold text-2xl uppercase p-4">Generated Hex List From Tints to Shades</h2>
 				<ul>
 					{colorCodeList()}
 				</ul>

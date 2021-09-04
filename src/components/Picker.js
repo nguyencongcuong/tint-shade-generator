@@ -11,10 +11,10 @@ function Randomizer(props) {
 	const dispatch = useDispatch()
 	return (
 		<div
-			className="bg-min-9 w-full h-full flex justify-center items-center text-white text-4xl cursor-pointer"
+			className="bg-min-9 w-full h-full flex justify-center items-center text-white text-2xl cursor-pointer"
 			onClick={() => dispatch(getColor(randomHex()))}
 		>
-			<span className="animate-pulse"><GiClick /></span>
+			<span className="animate-bounce"><GiClick /></span>
 		</div>
 	)
 }
