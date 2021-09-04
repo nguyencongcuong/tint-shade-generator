@@ -3,3 +3,12 @@
 @tailwind utilities;
 
 body { @apply bg-gray-200 }
+
+body {
+	overflow-y: scroll;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+	display: none;
+}

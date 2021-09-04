@@ -2,60 +2,76 @@ import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getColor } from "../redux/actions"
 import { randomHex } from "../functions"
+import Option from "./Option"
+import {MdColorLens, MdColorize, MdFormatColorText} from "react-icons/md"
+import {GiClick} from "react-icons/gi"
 
-function Button(props) {
+function Randomizer(props) {
+	const color = useSelector(state => state.color)
+	const dispatch = useDispatch()
 	return (
-		<button
-			className="bg-white text-gray-600 border-4 border-gray-600 px-4 py-2 m-1 hover:bg-gray-600 hover:text-gray-50 transition-all duration-1000"
-			onClick={props.action}
+		<div
+			className="bg-min-9 w-full h-full flex justify-center items-center text-white text-4xl cursor-pointer"
+			onClick={() => dispatch(getColor(randomHex()))}
 		>
-			{props.children}
-		</button>
+			<span className="animate-pulse"><GiClick /></span>
+		</div>
+	)
+}
+
+function Picker(props) {
+	const color = useSelector(state => state.color)
+	const dispatch = useDispatch()
+	return (
+		<input
+			name="picker"
+			type="color"
+			value={color}
+			onChange={(e) => dispatch(getColor(e.target.value))}
+			style={{ background: `${color}` }}
+			className={`w-full h-full`}
+		/>
+	)
+}
+
+function HexInput(props) {
+	const color = useSelector(state => state.color)
+	const dispatch = useDispatch()
+	return (
+		<input
+			name="color-picker-2"
+			type="text"
+			value={color}
+			onChange={(e) => dispatch(getColor(e.target.value))}
+			className="border-2 border-gray-300 text-gray-600 uppercase focus:outline-none px-4"
+		/>
 	)
 }
 
 function ColorInput() {
 
-	const color = useSelector(state => state.color)
-	const dispatch = useDispatch()
-
 	return (
 		<React.Fragment>
-			<section className="p-8">
+			<section className="grid grid-cols-1 lg:grid-cols-3">
 
-				<div className="grid grid-cols-1 lg:grid-cols-3">
+				<Option
+					icon={<MdColorLens />}
+					name="Random"
+					node={<Randomizer />}
+				/>
 
-					<Button action={() => dispatch(getColor(randomHex()))}>
-						Random
-					</Button>
+				<Option
+					icon={<MdColorize />}
+					name="Picker"
+					node={<Picker />}
+				/>
 
-					<Button name="Pick">
-						<label className="flex flex-col justify-center items-center">
-							Pick:
-							<input
-								name="color-picker-1"
-								type="color"
-								value={color}
-								onChange={(e) => dispatch(getColor(e.target.value))}
-								className={`bg-transparent w-12 h-12 mt-2`}
-							/>
-						</label>
-					</Button>
+				<Option
+					icon={<MdFormatColorText />}
+					name="Hex"
+					node={<HexInput />}
+				/>
 
-					<Button>
-						<label className="flex flex-col justify-start items-center">
-							Enter hex:
-							<input
-								name="color-picker-2"
-								type="text"
-								value={color}
-								onChange={(e) => dispatch(getColor(e.target.value))}
-								className="border-2 border-gray-300 text-gray-600 uppercase mt-2"
-							/>
-						</label>
-					</Button>
-
-				</div>
 			</section>
 		</React.Fragment>
 	)

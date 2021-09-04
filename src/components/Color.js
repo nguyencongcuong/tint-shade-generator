@@ -25,7 +25,7 @@ function Color(props) {
 					<button
 						className="opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer text-white"
 						onClick={() => handleClick()}>
-						<span id={`${props.id}-copy`} className=""><FileCopyOutlinedIcon /></span>
+						<span id={`${props.id}-copy`} ><FileCopyOutlinedIcon /></span>
 						<span id={`${props.id}-check`} className="hidden"><DoneIcon /></span>
 					</button>
 
@@ -33,7 +33,7 @@ function Color(props) {
 
 				<div
 					id={props.id}
-					className="text-xs text-center uppercase py-2 ">
+					className="text-xs text-center uppercase py-4 ">
 					{props.code}
 				</div>
 

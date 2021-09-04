@@ -15,8 +15,8 @@ export const generateTintShade = (color) => {
 		tints.push([h, s, tint_l_value])
 	}
 
-	const shade_l = l / 6
-	for (let i = 0, shade_l_value = l - shade_l; i < 5; i++, shade_l_value-=shade_l) {
+	const shade_l = l / 5
+	for (let i = 0, shade_l_value = l - shade_l; i < 4; i++, shade_l_value-=shade_l) {
 		shades.push([h, s, shade_l_value])
 	}
 
