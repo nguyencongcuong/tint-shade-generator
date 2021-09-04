@@ -3,7 +3,7 @@ import { combineReducers } from "redux"
 const colorReducer = (state = "#82B4C4", action) => {
 	switch (action.type) {
 		case 'GET_COLOR':
-			return action.payload
+			return action.payload === "" ? "#" : action.payload
 		default:
 			return state
 	}
