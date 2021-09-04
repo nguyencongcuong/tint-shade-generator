@@ -38,7 +38,6 @@ export const randomHex = () => {
 	const h = random(0, 360)
 	const s = random(10, 40)
 	const l = random(40, 80)
-	const hsl = `hsl(${h}, ${s}%, ${l}%)`
 	const hex = "#".concat(convert.hsl.hex(h, s, l))
 	return hex
 }

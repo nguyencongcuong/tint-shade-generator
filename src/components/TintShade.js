@@ -14,7 +14,7 @@ function TintShade() {
 
 	useEffect(() => {
 		dispatch(setTintsAndShades(shades_tints))
-	}, [color])
+	}, [color, dispatch, shades_tints])
 
 	const shadeTint = () => shades_tints.map( (e, i) =>
 		<Color

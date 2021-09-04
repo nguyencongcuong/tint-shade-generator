@@ -7,7 +7,6 @@ import {MdColorLens, MdColorize, MdFormatColorText} from "react-icons/md"
 import {GiClick} from "react-icons/gi"
 
 function Randomizer(props) {
-	const color = useSelector(state => state.color)
 	const dispatch = useDispatch()
 	return (
 		<div

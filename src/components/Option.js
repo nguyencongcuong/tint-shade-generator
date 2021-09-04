@@ -1,5 +1,4 @@
 import React from 'react';
-import {MdColorLens, MdColorize, MdFormatColorText} from "react-icons/md"
 
 function Option(props) {
 	return (
